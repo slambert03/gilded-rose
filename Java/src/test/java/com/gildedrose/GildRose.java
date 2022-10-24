@@ -8,7 +8,9 @@ public class GildRose {
         Product product1=new Product(12,38);
         LegendaryProduct product2=new LegendaryProduct(12,38);
 
-        ListProduct productsList=new ListProduct(product1,product2);
+        Product[] listeProduct = { product1, product2 };
+
+        ListProduct productsList=new ListProduct(listeProduct);
         productsList.updateQuality();
     }
 
