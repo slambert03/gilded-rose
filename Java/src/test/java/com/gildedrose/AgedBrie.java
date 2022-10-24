@@ -1,3 +1,5 @@
+package com.gildedrose;
+
 public class AgedBrie {
 
     private Product implementProduct;

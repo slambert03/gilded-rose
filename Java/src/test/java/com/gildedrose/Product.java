@@ -27,7 +27,7 @@ public class Product{
                 this.quality=0;
             }
         }
-        this.toString();
+        System.out.println(this.toString());
     }
 
     public void IncreaseQuality(int newQuality){
@@ -42,7 +42,7 @@ public class Product{
 
 
         public String toString(){
-            System.out.println('le produit actuel a un nombre de jours avant péremption de '+this.sellIn+" et une qualité de "+this.quality);
+            return "le produit actuel a un nombre de jours avant péremption de "+this.sellIn+" et une qualité de "+this.quality;
         }
 
 }
