@@ -1,3 +1,5 @@
+package com.gildedrose;
+
 public class Product{
     protected int sellIn;
     protected int quality;
@@ -37,5 +39,5 @@ public class Product{
     public int getQuality(){return this.quality;}
     public int getSellIn(){return this.sellIn;}
 
-    
+
 }
