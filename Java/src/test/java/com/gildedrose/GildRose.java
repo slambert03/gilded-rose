@@ -3,18 +3,14 @@ package com.gildedrose;
 import java.io.*;
 
 public class GildRose {
-    Product[] products;
 
-    public GildRose(Product[] products){
-        this.products = products;
-    }
-    public void main(String[] args){
-        updateQuality();
+    public static void main(String[] args){
+        Product product1=new Product(12,38);
+        LegendaryProduct product2=new LegendaryProduct(12,38);
+
+        ListProduct productsList=new ListProduct(product1,product2);
+        productsList.updateQuality();
     }
 
-    public void updateQuality(){
-        for (int productCounter = 0; productCounter < this.products.length; productCounter++) {
-           this.products[productCounter].EndDay();
-        }
-    }
+
 }
