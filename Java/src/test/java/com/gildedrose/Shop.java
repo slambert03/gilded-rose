@@ -2,7 +2,18 @@ package com.gildedrose;
 
 public class Shop {
 
-    public void createItem(){
+    private item[] listeItems;
 
+    public Shop(item[] items){
+        this.listeItems = items;
+    }
+
+    public item[] getItems() {
+        return listeItems;
+    }
+
+    public void update(){
+
+        }
     }
 }
