@@ -13,7 +13,10 @@ public class Shop {
     }
 
     public void update(){
-
+        for (item item:listeItems
+             ) {
+            item.updateSellin();
+            item.updateQuality();
         }
     }
 }
