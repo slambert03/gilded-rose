@@ -1,8 +1,8 @@
 package com.gildedrose;
 
 public class BackstagePassesItem extends item{
-    public BackstagePassesItem(int quality, int sellin) {
-        super(quality, sellin);
+    public BackstagePassesItem(int quality, int sellin, double base_price) {
+        super(quality, sellin, base_price);
     }
 
     @Override

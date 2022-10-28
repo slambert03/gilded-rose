@@ -8,20 +8,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class GildedRoseTest {
     Shop shop;
     item[] items = {
-        new GeneralItem(1,1),
-        new GeneralItem(2,0),
-        new GeneralItem(0,0),
-        new AgedBrieItem(1,2),
-        new AgedBrieItem(50,2),
-        new LegendaryItem(80,3),
-        new BackstagePassesItem(9,9),
-        new BackstagePassesItem(5,5),
-        new BackstagePassesItem(9,1),
+        new GeneralItem(1,1, 2),
+        new GeneralItem(2,0, 3),
+        new GeneralItem(0,0, 4),
+        new AgedBrieItem(1,2, 6),
+        new AgedBrieItem(50,2, 9),
+        new LegendaryItem(80,3, 2),
+        new BackstagePassesItem(9,9, 6),
+        new BackstagePassesItem(5,5, 4),
+        new BackstagePassesItem(9,1, 3),
+        new GeneralItem(9,1, 10),
     };
 
     @BeforeEach
     void setup() {
-        shop = new Shop(items);
+        ItemRepository itemRepository = new InMemoryItemRepository();
+        itemRepository.SaveInventory(items);
+        shop = new Shop(itemRepository);
     }
 
     @Test
@@ -93,6 +96,18 @@ public class GildedRoseTest {
         shop.update();
         assertEquals(shop.getItems()[8].getSellin(), 0);
         assertEquals(shop.getItems()[8].getQuality(), 0);
+    }
+
+    @Test
+    void should_saveListeOfItemInMemory(){
+       ItemRepository itemRepository = new InMemoryItemRepository();
+       itemRepository.SaveInventory(items);
+       assertEquals(itemRepository.GetInventory(), items);
+    }
+
+    @Test
+    void should_itemHaveAPrice(){
+        assertEquals(shop.getItems()[9].getValue(), 10);
     }
 
 }

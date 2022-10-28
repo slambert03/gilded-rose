@@ -4,12 +4,12 @@ public class Shop {
 
     private item[] listeItems;
 
-    public Shop(item[] items){
-        this.listeItems = items;
+    public Shop(ItemRepository itemRepository){
+        this.listeItems = itemRepository.GetInventory();
     }
 
     public item[] getItems() {
-        return listeItems;
+       return this.listeItems;
     }
 
     public void update(){

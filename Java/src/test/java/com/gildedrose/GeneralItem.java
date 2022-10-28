@@ -2,8 +2,8 @@ package com.gildedrose;
 
 public class GeneralItem extends item {
 
-    public GeneralItem(int quality, int sellin) {
-        super(quality, sellin);
+    public GeneralItem(int quality, int sellin, double base_price) {
+        super(quality, sellin, base_price);
     }
 
     @Override

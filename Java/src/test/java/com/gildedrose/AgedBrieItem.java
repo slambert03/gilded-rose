@@ -1,8 +1,8 @@
 package com.gildedrose;
 
 public class AgedBrieItem extends item {
-    public AgedBrieItem(int quality, int sellin) {
-        super(quality, sellin);
+    public AgedBrieItem(int quality, int sellin, double base_price) {
+        super(quality, sellin, base_price);
     }
 
     @Override

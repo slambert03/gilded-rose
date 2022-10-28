@@ -4,18 +4,24 @@ public abstract class item {
 
     protected int quality;
     protected int sellin;
+    protected double base_price;
 
-    public item(int quality, int sellin){
+    public item(int quality, int sellin, double base_price){
         this.quality = quality;
         this.sellin = sellin;
+        this.base_price = base_price;
     }
 
     public int getSellin() {
-        return sellin;
+        return this.sellin;
     }
 
     public int getQuality() {
-        return quality;
+        return this.quality;
+    }
+
+    public double getValue() {
+        return this.base_price;
     }
 
     public abstract void updateQuality();
