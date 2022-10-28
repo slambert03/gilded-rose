@@ -18,6 +18,7 @@ public class GildedRoseTest {
         new BackstagePassesItem(5,5, 4),
         new BackstagePassesItem(9,1, 3),
         new GeneralItem(9,1, 10),
+        new LegendaryItem(9,1, 40),
     };
 
     @BeforeEach
@@ -108,6 +109,11 @@ public class GildedRoseTest {
     @Test
     void should_itemHaveAPrice(){
         assertEquals(shop.getItems()[9].getValue(), 10);
+    }
+
+    @Test
+    void should_returnASpecificItem(){
+       assertEquals(shop.getItems()[10], shop.findItem("LEGENDARY",9));
     }
 
 }

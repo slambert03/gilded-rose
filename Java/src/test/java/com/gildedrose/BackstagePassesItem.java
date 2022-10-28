@@ -1,6 +1,9 @@
 package com.gildedrose;
 
 public class BackstagePassesItem extends item{
+
+    public final String type = "BACKSTAGEPASSES";
+
     public BackstagePassesItem(int quality, int sellin, double base_price) {
         super(quality, sellin, base_price);
     }
@@ -18,5 +21,10 @@ public class BackstagePassesItem extends item{
         if (this.sellin <= 0)
             this.quality = 0;
         floorQuality();
+    }
+
+    @Override
+    public String getType() {
+        return this.type;
     }
 }

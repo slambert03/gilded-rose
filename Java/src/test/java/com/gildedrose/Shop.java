@@ -19,4 +19,13 @@ public class Shop {
             item.updateQuality();
         }
     }
+
+    item findItem(String type, int quality){
+        for (item item:listeItems){
+                if (item.getType() == type && item.getQuality() == quality) {
+                    return item;
+                }
+           }
+        return null;
+    }
 }

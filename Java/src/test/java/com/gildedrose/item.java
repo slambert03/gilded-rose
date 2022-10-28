@@ -26,6 +26,8 @@ public abstract class item {
 
     public abstract void updateQuality();
 
+    public abstract String getType();
+
     public void updateSellin(){
         this.sellin--;
         floorSellin();
@@ -46,10 +48,9 @@ public abstract class item {
             this.quality--;
     }
 
-
-
     void floorSellin() {
         if (this.sellin <= 0)
             this.sellin = 0;
     }
+
 }
