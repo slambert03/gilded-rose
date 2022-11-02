@@ -20,7 +20,7 @@ public class Shop {
         }
     }
 
-    item sellItem(String type, int quality){
+    public item sellItem(String type, int quality){
        return this.itemRepository.FindItem(type, quality);
     }
 }
