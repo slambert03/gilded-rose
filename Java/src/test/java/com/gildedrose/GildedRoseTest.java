@@ -19,6 +19,7 @@ public class GildedRoseTest {
         new BackstagePassesItem(9,1, 3),
         new GeneralItem(9,1, 10),
         new LegendaryItem(9,1, 40),
+        new ConjuredItem(8,8, 2),
     };
 
     @BeforeEach
@@ -116,4 +117,11 @@ public class GildedRoseTest {
        assertEquals(shop.getItems()[10], shop.findItem("LEGENDARY",9));
     }
 
-}
+    @Test
+    void should_conjuredItemHaveQualityDecreaseTwoTimesFaster(){
+        shop.update();
+        assertEquals(shop.getItems()[11].getQuality(), 6);
+        assertEquals(shop.getItems()[11].getSellin(), 7);
+    }
+
+    }
