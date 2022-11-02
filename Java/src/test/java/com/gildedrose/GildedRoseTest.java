@@ -114,7 +114,7 @@ public class GildedRoseTest {
 
     @Test
     void should_returnASpecificItem(){
-       assertEquals(shop.getItems()[10], shop.findItem("LEGENDARY",9));
+       assertEquals(shop.getItems()[10], shop.sellItem("LEGENDARY",9));
     }
 
     @Test
