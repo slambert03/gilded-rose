@@ -22,7 +22,7 @@ public class ConsoleUI {
     }
 
     public void SellItem(String type, int quality){
-
+        this.shop.sellItem(type, quality);
     }
 
 

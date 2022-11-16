@@ -69,6 +69,12 @@ public class ConsoleUiTest {
 
     @Test
     void should_sellAnArticleThenRemoveTheArticleFromTheShop(){
+        console.SellItem("LEGENDARY", 80);
+        console.DisplayInventory();
+
+
+        assertEquals("[GENERALITEM, 13 sellin & 3 quality for 7.0€], [BACKSTAGEPASSES, 30 sellin & 25 quality for 17.0€],", outputStreamCaptor.toString()
+            .trim());
 
     }
 
