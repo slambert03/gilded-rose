@@ -23,4 +23,18 @@ public class Shop {
     public item sellItem(String type, int quality){
        return this.itemRepository.FindItem(type, quality);
     }
+
+    public void toStringItems() {
+        for (item item:this.itemRepository.GetInventory()){
+            System.out.print("["+ item.toString() + "], ");
+        }
+    }
+
+    public double getBalance() {
+        double balance = 0;
+        for (item item:this.itemRepository.GetInventory()){
+            balance += item.base_price;
+        }
+        return balance;
+    }
 }

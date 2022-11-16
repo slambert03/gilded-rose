@@ -3,6 +3,10 @@ import com.gildedrose.Shop;
 import com.gildedrose.item;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GildedRoseTest {
@@ -125,3 +129,4 @@ public class GildedRoseTest {
     }
 
     }
+

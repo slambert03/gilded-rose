@@ -20,5 +20,4 @@ public class AgedBrieItem extends item {
     public String getType() {
         return this.type;
     }
-
 }

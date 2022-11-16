@@ -19,5 +19,4 @@ public class GeneralItem extends item {
     public String getType() {
         return this.type;
     }
-
 }

@@ -53,4 +53,8 @@ public abstract class item {
             this.sellin = 0;
     }
 
+    @Override
+    public String toString() {
+        return this.getType() + ", " + this.sellin + " sellin & " + this.quality + " quality for " + this.base_price + "€";
+    }
 }

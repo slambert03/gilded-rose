@@ -2,7 +2,7 @@ package com.gildedrose;
 
 public class BackstagePassesItem extends item{
 
-    public final String type = "BACKSTAGEPASSES";
+    public final String type= "BACKSTAGEPASSES";
 
     public BackstagePassesItem(int quality, int sellin, double base_price) {
         super(quality, sellin, base_price);
