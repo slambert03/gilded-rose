@@ -1,4 +1,6 @@
-package org.example;
+package org.example.Actions;
+
+import org.example.Shop.*;
 
 import java.util.Scanner;
 
@@ -12,8 +14,7 @@ public class ConsoleUI {
         System.out.println("Si vous souhaitez mettre à jour tous les articles, tapez 4");
         System.out.println("Si vous souhaitez lancer les enchères, tapez 5");
         String toDo = scanner.nextLine();
-        new ActionsConsole().getAction(toDo, shop).action();// create a new shop before get in old shop in the main
-                                                            // class
+        new ActionsConsole().getAction(toDo, shop).action();
     }
 
 }

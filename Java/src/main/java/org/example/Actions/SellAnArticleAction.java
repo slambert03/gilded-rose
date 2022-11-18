@@ -1,4 +1,6 @@
-package org.example;
+package org.example.Actions;
+
+import org.example.Shop.*;
 
 import java.util.Scanner;
 
@@ -19,5 +21,7 @@ public class SellAnArticleAction extends ActionsConsole {
 
         this.shop.sellItem(type, IntQuantite);
         System.out.println("l'article a bien été vendu en " + IntQuantite + " quantités");
+
+        scanner.close();
     }
 }

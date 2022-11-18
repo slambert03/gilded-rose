@@ -1,19 +1,20 @@
-package org.example;
+package org.example.Items;
 
-public class BackstagePassesItem extends item{
+public class BackstagePassesItem extends item {
 
-    public final String type = "BACKSTAGEPASSES";
+    public final String Name = "BACKSTAGEPASSES";
 
     public BackstagePassesItem(int quality, int sellin, double base_price) {
         super(quality, sellin, base_price);
+
     }
 
     @Override
     public void updateQuality() {
-        if (this.sellin <= 10){
+        if (this.sellin <= 10) {
             this.quality++;
         }
-        if (this.sellin <= 5){
+        if (this.sellin <= 5) {
             this.quality++;
         }
         this.quality++;
@@ -24,7 +25,7 @@ public class BackstagePassesItem extends item{
     }
 
     @Override
-    public String getType() {
-        return this.type;
+    public String getName() {
+        return this.Name;
     }
 }

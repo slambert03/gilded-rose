@@ -1,10 +1,9 @@
-package org.example;
+package org.example.Items;
 
-public class GeneralItem extends item {
+public class ConjuredItem extends item {
+    public final String type = "CONJURED";
 
-    public final String Name = "GENERALITEM";
-
-    public GeneralItem(int quality, int sellin, double base_price) {
+    public ConjuredItem(int quality, int sellin, double base_price) {
         super(quality, sellin, base_price);
         this.attack = 1;
         this.defense = 1;
@@ -14,6 +13,7 @@ public class GeneralItem extends item {
     public void updateQuality() {
         isSellinEqualZero();
         this.quality--;
+        this.quality--;
         floorQuality();
     }
 
@@ -21,5 +21,4 @@ public class GeneralItem extends item {
     public String getName() {
         return this.Name;
     }
-
 }

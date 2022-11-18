@@ -1,4 +1,8 @@
-package org.example;
+package org.example.Actions;
+
+import org.example.Items.*;
+
+import org.example.Shop.*;
 
 public class EndOfDayAction extends ActionsConsole {
     public EndOfDayAction(Shop shop) {

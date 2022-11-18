@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.Actions.*;
+import org.example.Items.*;
+import org.example.Shop.*;
+
 public class Main {
     public static void main(String[] args) {
         item[] items = new item[] {
@@ -10,7 +14,7 @@ public class Main {
                 new ConjuredItem(8, 8, 2)
         };
 
-        ItemRepository itemRepository = new InMemoryItemRepository(items);
+        InMemoryItemRepository itemRepository = new InMemoryItemRepository(items);
         itemRepository.SaveInventory(items);
         Shop shop = new Shop(itemRepository);
 

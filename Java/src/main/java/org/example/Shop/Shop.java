@@ -1,11 +1,13 @@
-package org.example;
+package org.example.Shop;
+
+import org.example.Items.*;
 
 public class Shop {
 
-    private ItemRepository itemRepository;
+    private InMemoryItemRepository itemRepository;
     public float balance = 0;
 
-    public Shop(ItemRepository itemRepository) {
+    public Shop(InMemoryItemRepository itemRepository) {
         this.itemRepository = itemRepository;
     }
 
@@ -15,19 +17,25 @@ public class Shop {
 
     public void update() {
         for (item item : this.itemRepository.GetInventory()) {
-            item.updateSellin();
-            item.updateQuality();
+            if (item instanceof RelicItem) {
+                this.balance += 100;
+            } else {
+                item.updateSellin();
+                item.updateQuality();
+            }
         }
     }
 
     public item sellItem(String type, int quality) {
+
         return this.itemRepository.FindItem(type, quality);
     }
 
     public String toString() {
         String sentence = "";
         for (item itemInItemRepository : this.itemRepository.GetInventory()) {
-            sentence += itemInItemRepository.toString2();
+
+            sentence += itemInItemRepository.toString();
         }
         return sentence;
     }

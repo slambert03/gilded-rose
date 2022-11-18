@@ -1,4 +1,7 @@
-package org.example;
+package org.example.Actions;
+
+import org.example.Items.*;
+import org.example.Shop.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -21,6 +24,7 @@ public class AuctionHouse extends ActionsConsole {
             System.out.println("Quel est le nom du prochain acheteur");
             nextBuyerName = scanner.nextLine();
         }
+
     }
 
     public void launchAuctionsByArticle(item item) {
@@ -50,11 +54,11 @@ public class AuctionHouse extends ActionsConsole {
         }
         if (buyerFinal != null) {
             buyerFinal.AddAnAuctionItemToPay(auctionItem);
-            shop.sellItem(item.getType(), item.getQuality());
+            shop.sellItem(item.getName(), item.getQuality());
         }
 
         System.out
-                .println("Merci pour la vente de l'article " + item.getType() + " à l'acheteur " + buyerFinal.getName()
+                .println("Merci pour la vente de l'article " + item.getName() + " à l'acheteur " + buyerFinal.getName()
                         + " le solde qu'il doit payer est désormais " + buyerFinal.getBalanceToPay() + " unités");
         System.out.println("___________________________________________");
 

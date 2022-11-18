@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Items;
 
 public class LegendaryItem extends item {
 
@@ -8,6 +8,7 @@ public class LegendaryItem extends item {
         super(quality, sellin, base_price);
         this.attack = 1;
         this.defense = 1;
+        this.Name = "LEGENDARY";
     }
 
     @Override
@@ -16,8 +17,8 @@ public class LegendaryItem extends item {
     }
 
     @Override
-    public String getType() {
-        return this.type;
+    public String getName() {
+        return this.Name;
     }
 
     @Override

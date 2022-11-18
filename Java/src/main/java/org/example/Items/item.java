@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Items;
 
 public abstract class item {
 
@@ -75,7 +75,7 @@ public abstract class item {
             this.sellin = 0;
     }
 
-    String toString2() {
+    public String toString() {
         return "produit de type " + this.getName() + " de qualité " + this.quality + " et " + this.sellin
                 + " jours avant fin de vie du produit";
     }

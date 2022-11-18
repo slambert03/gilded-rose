@@ -1,4 +1,6 @@
-package org.example;
+package org.example.Shop;
+
+import org.example.Items.*;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,8 @@
-package org.example;
+package org.example.Actions;
+
+import org.example.Items.*;
+
+import org.example.Shop.*;
 
 public class SeeAllArticlesAction extends ActionsConsole {
     public SeeAllArticlesAction(Shop shop) {
@@ -10,7 +14,7 @@ public class SeeAllArticlesAction extends ActionsConsole {
         item actualItem;
         for (int indice = 0; indice < allItems.length; indice++) {
             actualItem = allItems[indice];
-            System.out.println(actualItem.toString2());
+            System.out.println(actualItem.toString());
         }
     }
 }

@@ -1,4 +1,6 @@
-package org.example;
+package org.example.Shop;
+
+import org.example.Items.*;
 
 public class InMemoryItemRepository implements ItemRepository {
 
@@ -22,6 +24,7 @@ public class InMemoryItemRepository implements ItemRepository {
     public item FindItem(String type, int quality) {
         for (item item : listeItems) {
             if (item.getName() == type && item.getQuality() == quality) {
+                System.out.println(item.toString());
                 return item;
             }
         }
@@ -31,7 +34,7 @@ public class InMemoryItemRepository implements ItemRepository {
     public String toString() {
         String sentence = "";
         for (item item : this.listeItems) {
-            sentence += item.toString2();
+            sentence += item.toString();
         }
         return sentence;
     }

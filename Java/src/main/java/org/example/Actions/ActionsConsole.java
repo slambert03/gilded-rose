@@ -1,4 +1,6 @@
-package org.example;
+package org.example.Actions;
+
+import org.example.Shop.*;
 
 public class ActionsConsole {
     protected Shop shop;
