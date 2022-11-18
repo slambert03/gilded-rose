@@ -144,10 +144,55 @@ public class GildedRoseTest {
     }
 
     @Test
+    void should_createSeeAllArticles() {
+        ActionsConsole action = new ActionsConsole().getAction("3", shop);
+        assert (action instanceof SeeAllArticlesAction);
+    }
+
+    @Test
+    void should_createSellAnArticle() {
+        ActionsConsole action = new ActionsConsole().getAction("2", shop);
+        assert (action instanceof SellAnArticleAction);
+    }
+
+    @Test
+    void should_createActionDisplayBalanceShop() {
+        ActionsConsole action = new ActionsConsole().getAction("1", shop);
+        assert (action instanceof DisplayBalanceAction);
+    }
+
+    @Test
     void should_RelicItemDoesntUpdate() {
         assertEquals(shop.balance, 0);
         shop.update();
         assertEquals(shop.balance, 100);
+    }
+
+    @Test
+    void should_createNewShopBalanceZero() {
+        DisplayBalanceAction action = new DisplayBalanceAction(shop);
+        assertEquals(action.getBalance(), 0);
+    }
+
+    @Test
+    void should_createAuctionBuyerAndAddAnArticleToPay() {
+        BuyerAuction buyer = new BuyerAuction("Simon");
+        buyer.AddAnAuctionItemToPay(new AuctionItem(new GeneralItem(10, 10, 10)));
+        assertEquals(buyer.getBalanceToPay(), 10);
+    }
+
+    @Test
+    void should_FindAProductInMemoryItemInventory() {
+        GeneralItem ItemToTest = new GeneralItem(1, 1, 2);
+        InMemoryItemRepository memoryToItem = new InMemoryItemRepository(items);
+        assertEquals(memoryToItem.FindItem(ItemToTest.getName(), ItemToTest.getQuality()).toString(),
+                ItemToTest.toString());
+
+    }
+
+    @Test
+    void should_ReturnListOfItemInShop() {
+        assertEquals(shop.getItems(), items);
     }
 
 }

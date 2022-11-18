@@ -7,6 +7,10 @@ public class DisplayBalanceAction extends ActionsConsole {
         this.shop = shop;
     }
 
+    public float getBalance() {
+        return this.shop.balance;
+    }
+
     public void action() {
         System.out
                 .println("Vous avez demandé de voir le solde, il est à actuellement " + this.shop.balance + " unités");

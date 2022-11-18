@@ -13,4 +13,5 @@ public class RelicItem extends item {
         // TODO Auto-generated method stub
 
     }
+
 }
