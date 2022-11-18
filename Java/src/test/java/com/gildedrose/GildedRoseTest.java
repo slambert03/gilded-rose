@@ -1,8 +1,10 @@
 package com.gildedrose;
-import com.gildedrose.Shop;
-import com.gildedrose.item;
+import org.example.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.io.Console;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GildedRoseTest {
@@ -24,9 +26,11 @@ public class GildedRoseTest {
 
     @BeforeEach
     void setup() {
-        ItemRepository itemRepository = new InMemoryItemRepository();
+        InMemoryItemRepository itemRepository = new InMemoryItemRepository(this.items);
         itemRepository.SaveInventory(items);
         shop = new Shop(itemRepository);
+        ConsoleUI console=new ConsoleUI(shop);
+        ActionsConsole actionConsole=new ActionsConsole();
     }
 
     @Test
@@ -102,7 +106,7 @@ public class GildedRoseTest {
 
     @Test
     void should_saveListeOfItemInMemory(){
-       ItemRepository itemRepository = new InMemoryItemRepository();
+       InMemoryItemRepository itemRepository = new InMemoryItemRepository(this.items);
        itemRepository.SaveInventory(items);
        assertEquals(itemRepository.GetInventory(), items);
     }
@@ -124,4 +128,18 @@ public class GildedRoseTest {
         assertEquals(shop.getItems()[11].getSellin(), 7);
     }
 
+
+
+    @Test
+    void should_createAuctionHouse(){
+        ActionsConsole action=new ActionsConsole().getAction("5",shop);
+        assert(action instanceof AuctionHouse);
     }
+
+    @Test
+    void should_createEndOfDay(){
+        ActionsConsole action=new ActionsConsole().getAction("5",shop);
+        assert(action instanceof EndOfDayAction);
+    }
+
+}

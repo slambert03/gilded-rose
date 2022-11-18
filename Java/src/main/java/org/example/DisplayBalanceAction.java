@@ -1,6 +1,4 @@
-package com.gildedrose;
-
-import javax.swing.*;
+package org.example;
 
 public class DisplayBalanceAction extends ActionsConsole {
     public DisplayBalanceAction(Shop shop) {

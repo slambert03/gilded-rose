@@ -1,4 +1,4 @@
-package com.gildedrose;
+package org.example;
 
 interface ItemRepository {
     public item[] GetInventory();

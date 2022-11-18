@@ -1,4 +1,4 @@
-package com.gildedrose;
+package org.example;
 import java.util.Scanner;
 public class SellAnArticleAction extends ActionsConsole {
 

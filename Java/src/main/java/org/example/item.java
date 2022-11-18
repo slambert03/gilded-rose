@@ -1,10 +1,12 @@
-package com.gildedrose;
+package org.example;
 
 public abstract class item {
 
     protected int quality;
     protected int sellin;
     protected double base_price;
+
+
 
     public item(int quality, int sellin, double base_price){
         this.quality = quality;
@@ -53,4 +55,7 @@ public abstract class item {
             this.sellin = 0;
     }
 
+    String toString2(){
+        return "produit de type "+this.getType()+" de qualité "+this.quality+" et "+this.sellin+" jours avant fin de vie du produit";
+    }
 }

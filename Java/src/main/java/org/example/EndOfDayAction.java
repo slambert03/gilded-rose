@@ -1,4 +1,4 @@
-package com.gildedrose;
+package org.example;
 
 public class EndOfDayAction extends ActionsConsole{
     public EndOfDayAction(Shop shop) {

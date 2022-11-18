@@ -1,17 +1,18 @@
-package com.gildedrose;
+package org.example;
 
-public class GeneralItem extends item {
+public class AgedBrieItem extends item {
 
-    public final String type = "GENERALITEM";
+    public final String type = "AGED_BRIE";
 
-    public GeneralItem(int quality, int sellin, double base_price) {
+    public AgedBrieItem(int quality, int sellin, double base_price) {
         super(quality, sellin, base_price);
     }
 
     @Override
     public void updateQuality() {
         isSellinEqualZero();
-        this.quality--;
+        this.quality++;
+        ceilingQuality();
         floorQuality();
     }
 

@@ -1,4 +1,4 @@
-package com.gildedrose;
+package org.example;
 
 public class Shop {
 
@@ -23,4 +23,13 @@ public class Shop {
     public item sellItem(String type, int quality){
        return this.itemRepository.FindItem(type, quality);
     }
+
+    public String toString(){
+        String sentence="";
+        for (item itemInItemRepository:this.itemRepository.GetInventory()){
+            sentence+=itemInItemRepository.toString2();
+        }
+        return sentence;
+    }
+
 }

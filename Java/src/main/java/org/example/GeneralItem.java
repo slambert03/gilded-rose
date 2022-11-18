@@ -1,9 +1,10 @@
-package com.gildedrose;
+package org.example;
 
-public class ConjuredItem extends item {
-    public final String type = "CONJURED";
+public class GeneralItem extends item {
 
-    public ConjuredItem(int quality, int sellin, double base_price) {
+    public final String type = "GENERALITEM";
+
+    public GeneralItem(int quality, int sellin, double base_price) {
         super(quality, sellin, base_price);
     }
 
@@ -11,12 +12,13 @@ public class ConjuredItem extends item {
     public void updateQuality() {
         isSellinEqualZero();
         this.quality--;
-        this.quality--;
         floorQuality();
     }
 
     @Override
     public String getType() {
-        return type;
+        return this.type;
     }
+
+
 }
