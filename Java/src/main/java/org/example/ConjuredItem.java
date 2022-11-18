@@ -5,6 +5,8 @@ public class ConjuredItem extends item {
 
     public ConjuredItem(int quality, int sellin, double base_price) {
         super(quality, sellin, base_price);
+        this.attack = 1;
+        this.defense = 1;
     }
 
     @Override
@@ -16,7 +18,7 @@ public class ConjuredItem extends item {
     }
 
     @Override
-    public String getType() {
-        return type;
+    public String getName() {
+        return this.Name;
     }
 }

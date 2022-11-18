@@ -14,7 +14,7 @@ public class Main {
         itemRepository.SaveInventory(items);
         Shop shop = new Shop(itemRepository);
 
-        ConsoleUI myConsole = new ConsoleUI(shop);
+        new ConsoleUI(shop);
 
     }
 }

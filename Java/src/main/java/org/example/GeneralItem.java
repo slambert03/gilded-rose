@@ -2,10 +2,12 @@ package org.example;
 
 public class GeneralItem extends item {
 
-    public final String type = "GENERALITEM";
+    public final String Name = "GENERALITEM";
 
     public GeneralItem(int quality, int sellin, double base_price) {
         super(quality, sellin, base_price);
+        this.attack = 1;
+        this.defense = 1;
     }
 
     @Override
@@ -16,9 +18,8 @@ public class GeneralItem extends item {
     }
 
     @Override
-    public String getType() {
-        return this.type;
+    public String getName() {
+        return this.Name;
     }
-
 
 }

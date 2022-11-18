@@ -5,10 +5,12 @@ public abstract class item {
     protected int quality;
     protected int sellin;
     protected double base_price;
+    protected String Name;
 
+    protected int attack = 0;
+    protected int defense = 0;
 
-
-    public item(int quality, int sellin, double base_price){
+    public item(int quality, int sellin, double base_price) {
         this.quality = quality;
         this.sellin = sellin;
         this.base_price = base_price;
@@ -22,15 +24,33 @@ public abstract class item {
         return this.quality;
     }
 
+    public void updateAttack() {
+        this.attack += 1;
+    }
+
+    public int getAttack() {
+        return this.attack;
+    }
+
+    public void updateDefense() {
+        this.defense += 1;
+    }
+
+    public int getDefense() {
+        return this.defense;
+    }
+
     public double getValue() {
         return this.base_price;
     }
 
     public abstract void updateQuality();
 
-    public abstract String getType();
+    public String getName() {
+        return this.Name;
+    }
 
-    public void updateSellin(){
+    public void updateSellin() {
         this.sellin--;
         floorSellin();
     };
@@ -55,7 +75,8 @@ public abstract class item {
             this.sellin = 0;
     }
 
-    String toString2(){
-        return "produit de type "+this.getType()+" de qualité "+this.quality+" et "+this.sellin+" jours avant fin de vie du produit";
+    String toString2() {
+        return "produit de type " + this.getName() + " de qualité " + this.quality + " et " + this.sellin
+                + " jours avant fin de vie du produit";
     }
 }

@@ -1,15 +1,15 @@
 package org.example;
 
-public class EndOfDayAction extends ActionsConsole{
+public class EndOfDayAction extends ActionsConsole {
     public EndOfDayAction(Shop shop) {
-        super();
+        this.shop = shop;
     }
 
-    public void action(){
-        item[] allItems=this.shop.getItems();
+    public void action() {
+        item[] allItems = this.shop.getItems();
         item actualitem;
-        for (int indice=0;indice<allItems.length;indice++){
-            actualitem=allItems[indice];
+        for (int indice = 0; indice < allItems.length; indice++) {
+            actualitem = allItems[indice];
             actualitem.updateQuality();
             actualitem.updateSellin();
         }
