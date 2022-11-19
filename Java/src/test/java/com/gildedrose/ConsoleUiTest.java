@@ -15,7 +15,7 @@ public class ConsoleUiTest {
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
     Shop shop;
-    ConsoleUI console;
+    ShopOutPutBoundary console;
     item[] items = {
         new LegendaryItem(80,50, 42),
         new GeneralItem(3,13, 7),
@@ -29,7 +29,7 @@ public class ConsoleUiTest {
         shop = new Shop(itemRepository);
         System.setOut(new PrintStream(outputStreamCaptor));
 
-        console = new ConsoleUI(shop);
+        console = new ShopOutPutBoundary(shop);
 
     }
 
@@ -77,5 +77,4 @@ public class ConsoleUiTest {
             .trim());
 
     }
-
 }

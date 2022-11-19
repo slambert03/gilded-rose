@@ -105,13 +105,6 @@ public class GildedRoseTest {
     }
 
     @Test
-    void should_saveListeOfItemInMemory(){
-       ItemRepository itemRepository = new InMemoryItemRepository();
-       itemRepository.SaveInventory(items);
-       assertEquals(itemRepository.GetInventory(), items);
-    }
-
-    @Test
     void should_itemHaveAPrice(){
         assertEquals(shop.getItems()[9].getValue(), 10);
     }
@@ -126,6 +119,17 @@ public class GildedRoseTest {
         shop.update();
         assertEquals(shop.getItems()[11].getQuality(), 6);
         assertEquals(shop.getItems()[11].getSellin(), 7);
+    }
+
+    @Test
+    void should_CreateEnchereThenTheThirdWinAndThePriceShouldIncrease30Pourcent(){
+        Enchere enchere = new Enchere(shop.getItems()[11], shop);
+        enchere.newEnchere();
+        enchere.newEnchere();
+        enchere.newEnchere();
+
+        assertEquals(enchere.getPrice(), 2.6620000000000004);
+        assertEquals(shop.getItems().length, 11);
     }
 
     }

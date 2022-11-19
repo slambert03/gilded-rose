@@ -1,11 +1,11 @@
 package com.gildedrose;
 import com.gildedrose.Shop;
 
-public class ConsoleUI {
+public class ShopOutPutBoundary {
 
     private Shop shop;
 
-    public ConsoleUI(Shop shop){
+    public ShopOutPutBoundary(Shop shop){
         this.shop = shop;
     }
 
