@@ -10,8 +10,7 @@ public class RelicItem extends item {
 
     @Override
     public void updateQuality() {
-        // TODO Auto-generated method stub
-
+        // not to nothing because that product have not to update
     }
 
 }

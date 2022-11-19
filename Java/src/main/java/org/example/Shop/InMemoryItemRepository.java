@@ -24,7 +24,7 @@ public class InMemoryItemRepository implements ItemRepository {
     public item FindItem(String type, int quality) {
         for (item item : listeItems) {
             if (item.getName() == type && item.getQuality() == quality) {
-                System.out.println(item.toString());
+                System.out.println(item.getQuality());
                 return item;
             }
         }

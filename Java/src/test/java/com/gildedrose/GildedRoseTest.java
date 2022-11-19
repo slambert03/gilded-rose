@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class GildedRoseTest {
     Shop shop;
@@ -191,8 +192,62 @@ public class GildedRoseTest {
     }
 
     @Test
+    void should_NotFindAProductNotInMemoryItemInventory() {
+        GeneralItem ItemToTest = new GeneralItem(12, 12, 22);
+        InMemoryItemRepository memoryToItem = new InMemoryItemRepository(items);
+        assertNull(memoryToItem.FindItem(ItemToTest.getName(), ItemToTest.getQuality()));
+
+    }
+    @Test
     void should_ReturnListOfItemInShop() {
         assertEquals(shop.getItems(), items);
     }
 
+    @Test
+    void should_returnAuctionPrice(){
+        GeneralItem ItemToTest=new GeneralItem(12,12,12);
+        InMemoryItemRepository memoryToItem = new InMemoryItemRepository(items);
+        AuctionItem auctionItem=new AuctionItem(ItemToTest);
+        assertEquals(auctionItem.getAuctionPrice(),12);
+    }
+
+    @Test
+    void should_outbidAnArticleOutBidOneTime(){
+        GeneralItem ItemToTest=new GeneralItem(12,12,12);
+        InMemoryItemRepository memoryToItem = new InMemoryItemRepository(items);
+        AuctionItem auctionItem=new AuctionItem(ItemToTest);
+        assertEquals(auctionItem.getAuctionPrice(),12);
+        auctionItem.outbid();
+        assertEquals(auctionItem.getAuctionPrice(),12*1.1);
+
+
+    }
+
+    @Test
+    void should_createARelicITemHaveNotToUpdate(){
+        RelicItem relicItem=new RelicItem();
+        int oldQuality=relicItem.getQuality();
+        int oldSellin=relicItem.getSellin();
+        assertEquals(relicItem.getQuality(),-1);
+        assertEquals(relicItem.getSellin(),-1);
+        relicItem.updateQuality();
+        assertEquals(relicItem.getQuality(),oldQuality);
+        assertEquals(relicItem.getSellin(),oldSellin);
+
+    }
+
+    @Test
+    void should_outbidAnArticleOutBidFourTimes(){
+        GeneralItem ItemToTest=new GeneralItem(12,12,12);
+        InMemoryItemRepository memoryToItem = new InMemoryItemRepository(items);
+        AuctionItem auctionItem=new AuctionItem(ItemToTest);
+        assertEquals(auctionItem.getAuctionPrice(),12);
+        auctionItem.outbid();
+        auctionItem.outbid();
+        auctionItem.outbid();
+        auctionItem.outbid();
+        assertEquals(auctionItem.getAuctionPrice(),12*1.1*1.1*1.1);
+
+
+    }
 }
