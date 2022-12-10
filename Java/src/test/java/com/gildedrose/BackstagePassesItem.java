@@ -8,6 +8,10 @@ public class BackstagePassesItem extends item{
         super(quality, sellin, base_price);
     }
 
+    public  BackstagePassesItem(int quality, int sellin, int base_price, int attack, int defense) {
+        super(quality, sellin, base_price, attack, defense);
+    }
+
     @Override
     public void updateQuality() {
         if (this.sellin <= 10){

@@ -8,6 +8,10 @@ public class LegendaryItem extends item{
         super(quality, sellin, base_price);
     }
 
+    public LegendaryItem(int quality, int sellin, int base_price, int attack, int defense) {
+        super(quality, sellin, base_price, attack, defense);
+    }
+
     @Override
     public void updateQuality() {
         floorQuality();

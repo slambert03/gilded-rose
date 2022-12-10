@@ -5,15 +5,44 @@ public abstract class item {
     protected int quality;
     protected int sellin;
     protected double base_price;
+    protected int attack;
+    protected int defense;
+
+    public item(int quality, int sellin, double base_price, int attack, int defense) {
+        this.quality = quality;
+        this.sellin = sellin;
+        this.base_price = base_price;
+        this.attack = attack;
+        this.defense = defense;
+    }
+
 
     public item(int quality, int sellin, double base_price){
         this.quality = quality;
         this.sellin = sellin;
         this.base_price = base_price;
+        this.attack = 0;
+        this.defense = 0;
     }
 
     public int getSellin() {
         return this.sellin;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
     }
 
     public int getQuality() {

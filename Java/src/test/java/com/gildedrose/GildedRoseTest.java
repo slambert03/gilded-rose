@@ -24,6 +24,8 @@ public class GildedRoseTest {
         new GeneralItem(9,1, 10),
         new LegendaryItem(9,1, 40),
         new ConjuredItem(8,8, 2),
+        new LegendaryItem(9,1, 40, 2, 5),
+        new GeneralItem(0,0, 4, 1, 2),
     };
 
     @BeforeEach
@@ -129,8 +131,20 @@ public class GildedRoseTest {
         enchere.newEnchere();
 
         assertEquals(enchere.getPrice(), 2.6620000000000004);
-        assertEquals(shop.getItems().length, 11);
     }
+
+    @Test
+    void should_legendaryAndGeneralItemHaveAttackAttribute(){
+        assertEquals(shop.getItems()[12].getAttack(), 2);
+        assertEquals(shop.getItems()[12].getDefense(), 5);
+
+
+        assertEquals(shop.getItems()[13].getAttack(), 1);
+        assertEquals(shop.getItems()[13].getDefense(), 2);
+    }
+
+
+
 
     }
 

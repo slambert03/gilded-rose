@@ -8,6 +8,10 @@ public class GeneralItem extends item {
         super(quality, sellin, base_price);
     }
 
+    public GeneralItem(int quality, int sellin, int base_price, int attack, int defense) {
+        super(quality, sellin, base_price, attack, defense);
+    }
+
     @Override
     public void updateQuality() {
         isSellinEqualZero();
