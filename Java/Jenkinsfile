@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+    tools {
+    maven 'maven'
+    }
+    stages {
+        stage ('Clone') {
+            steps {
+                git 'https://github.com/slambert03/gilded-rose.git'
+                }
+            }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+                checkout scmGit(branches: [[name: '*/integation_continue']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/slambert03/gilded-rose.git']])
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                }
+            }
+        stage('Deploy') {
+            steps {
+                 echo 'Deploying'
+                 }
+            }
+        }
+        post {
+            always {
+                junit(
+                    allowEmptyResults:true,
+                    testResults: 'test-report/.xml' )
+                    }
+        }
+    }
